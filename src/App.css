@@ -1,38 +1,361 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Main, .Rules { 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5C2CD5;
+}
+
+.Main-cont, .Rules-cont, .Rules-cont span, .PlayerMainCard {
+  border: .2rem solid #000;
+  border-radius: 1rem;
+  box-shadow: 0 .5rem 2px -2px #000;
+}
+
+/* ************* MAIN *************** */
+
+.Main-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  background-color: #7A45FF;
+}
+
+.Main-logo {
+  position: relative;
+  width: 10em;
+  height: 10em;
+}
+
+.Main-logo span {
+  position: absolute;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: .1rem solid #000;
+  box-shadow: 0 4px 2px -2px #000;
+}
+
+.Main-logo span:nth-child(1) {
+  top: 35%;
+  left: 35%;
+  background-color:#FE6687;
+}
+
+.Main-logo span:nth-child(2) {
+  top: 35%;
+  left: 52%;
+  background-color: #FFCE6B;
+}
+
+.Main-logo span:nth-child(3) {
+  top: 52%;
+  left: 35%;
+  background-color:#FFCE6B;
+}
+
+.Main-logo span:nth-child(4) {
+  top: 52%;
+  left: 52%;
+  background-color: #FE6687;
+}
+
+.Main-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.Main-nav a {
+  border: .1rem solid #000;
+  border-radius: 1em;
+  margin: .5rem .1rem;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 25vw;
+  color: #000;
+  box-shadow: 0 4px 2px -2px #000;
+  transition: .2s ease-in-out;
+}
+
+.Main-nav a:nth-child(1), .Main-nav a:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Main-nav a:nth-child(1) {
+  background-color: #FE6687;
+  color: #fff;
+}
+
+.Main-nav a:nth-child(1):hover {
+  background-color: #ff3460;
+}
+
+.Main-nav a:nth-child(2) {
+  background-color: #FFCE6B;
+}
+
+.Main-nav a:nth-child(2):hover {
+  background-color: #ffbf3f;
+}
+
+.Main-nav a:nth-child(3) {
+  background-color: #fff;
+}
+
+.Main-nav a:nth-child(3):hover {
+  background-color: #dcdcdc;
+}
+
+/* ************* RULES *************** */
+
+.Rules-cont {
+  background-color: #fff;
+  padding: 2em 2em 4em 2em;
+  width: 30vw;
+  position: relative;
+}
+
+.Rules-cont h1 {
+  text-transform: uppercase;
   text-align: center;
+  font-size: 3em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Rules-cont h2 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #7945FF;
+  padding: 1em 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Rules-cont p {
+  color: #979797;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ol {
+  list-style:none;
+  counter-reset:mycounter;
+  padding:0;
+}
+
+ol li {
+  position:relative; 
+  margin-left: 30px;
+  color: #979797;
+}
+
+ol li:before {
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:0;
+  left:-30px;
+  color: #000;
+  font-weight: bolder;
+}
+
+.Rules-cont span {
+  position: absolute;
+  bottom:-8%;
+  left: 45%;
+  background-color: #FE6687;
+  font-size: 3em;
+  border-radius: 50%;
+  transition: .2s ease-in-out;
+}
+
+.Rules-cont span:hover {
+  background-color: #ff3460;
+}
+
+/* ************* PLAYER *************** */
+
+.Player {
+  background-color: #7A45FF;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+}
+
+.bubble {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background-color: #5C2CD5;
+  border-radius: 3rem 3rem 0 0;
+}
+
+/* .bubble::after {
+  content: '';
+  border-top-left-radius: 99% 100%;
+  border-top-right-radius: 99% 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #5C2CD5;
+  height: 25%;
+} */
+
+/* ************* PLAYER TOP *************** */
+
+.Player-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 10vw;
+}
+
+.Player-logo {
+  margin: 0 10em;
+}
+
+.Player-top p {
+  background-color: rgb(92, 44, 213, 0.5);
+  color: #fff;
+  text-transform: uppercase;
+  padding: .5em 2em;
+  text-decoration: none;
+  border-radius: 1em;
+}
+
+.Player-top p:hover {
+  background-color: #5C2CD5;
+  transition: .2s ease-in-out;
+}
+
+/* ************* PLAYER MAIN *************** */
+
+.PlayerMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+/* ************* PLAYER MAIN CARD 1 *************** */
+
+.PlayerMainCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2em;
+  background-color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.PlayerMainCard p {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.PlayerMainCard h1 {
+  font-size: 3em;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .Rules-cont {
+    width: 50vw;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .Main-nav a {
+    font-size: .8em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Main-nav a {
+    font-size: .5em;
+    width: 35vw;
+  }  
+  .Rules-cont {
+    width: 80vw;
+  }
+}
+
+
+/* .Rules-cont {
+  background-color: #fff;
+  padding: 2em;
+  width: 30vw;
+  position: relative;
+} */
+
+/* .Rules-cont h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+}
+
+.Rules-cont h2 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #7945FF;
+  padding: 1em 0;
+}
+
+.Rules-cont p {
+  color: #979797;
+}
+
+ol {
+  list-style:none;
+  counter-reset:mycounter;
+  padding:0;
+}
+
+ol li {
+  position:relative; 
+  margin-left: 30px;
+  color: #979797;
+}
+
+ol li:before {
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:0;
+  left:-30px;
+  color: #000;
+  font-weight: bolder;
+}
+
+.Rules-cont span {
+  position: absolute;
+  bottom:-8%;
+  left: 45%;
+  background-color: #FE6687;
+  font-size: 3em;
+  border-radius: 50%;
+  transition: .2s ease-in-out;
+}
+
+.Rules-cont span:hover {
+  background-color: #ff3460;
+} */
