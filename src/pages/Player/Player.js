@@ -136,6 +136,7 @@ function Player() {
 
   return (
     <div className='Player'>
+        <p></p>
       <div className='Player-top'>
         <Link to='/' style={{ textDecoration: 'none' }}><p>Quit</p></Link>
         <div className='Main-logo Player-logo'>
