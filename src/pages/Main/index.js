@@ -21,7 +21,7 @@ function index() {
                     <p>play vs cpu</p>
                     <span><TfiFaceSmile /><TfiFaceSad /></span>
                 </Link> */}
-                <Link to='/Player/index.js'>
+                <Link to='/Player/Player.js'>
                     <p>play</p>
                     <span><TfiFaceSmile /><TfiFaceSmile /></span>
                 </Link>

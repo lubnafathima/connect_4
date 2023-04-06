@@ -230,19 +230,21 @@ ol li:before {
   margin: 0 10em;
 }
 
-.Player-top p {
-  background-color: rgb(92, 44, 213, 0.5);
+.Player-top a {
+  /* background-color: rgb(92, 44, 213, 0.5); */
   color: #fff;
+  font-weight: 900;
+  font-size: 1.2em;
   text-transform: uppercase;
   padding: .5em 2em;
   text-decoration: none;
   border-radius: 1em;
   cursor: pointer;
+  transition: .2s ease-in-out;
 }
 
-.Player-top p:hover {
-  background-color: #5C2CD5;
-  transition: .2s ease-in-out;
+.Player-top a:hover {
+  color: #FE6687;
 }
 
 /* ************* PLAYER MAIN *************** */
@@ -274,6 +276,7 @@ ol li:before {
 
 .PlayerMainCard h1 {
   font-size: 3em;
+  text-align: center;
 }
 
 .PlayerMainCard1 h1 {

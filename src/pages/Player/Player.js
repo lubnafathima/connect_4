@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { BsFillEmojiSmileFill } from 'react-icons/bs';
 
-function index() {
+function Player() {
+
+    const [visible, setVisible] = React.useState(false);
 
   let playerRed = "R";
   let playerYellow = "Y";
@@ -32,6 +34,10 @@ function index() {
           board.push(row);
       }
   }
+
+//   useEffect(()=>{
+//         setGame()
+//     },[])
 
   function setPiece() {
       if (gameOver) {
@@ -117,11 +123,12 @@ function index() {
     //   let cardBody = document.getElementById("card-body");
       if (board[r][c] === playerRed) {
           card.innerHTML = `Player 1 <br> Wins`
-      } else {
+          card.style.background = "#FE6687";
+        } else {
           card.innerHTML = "Player 2 Wins"
+          card.style.background = "#FFCE6B";
       }
     //   cardBody.innerText = "Wins";             
-      card.style.background = "#FE6687";
       card.style.border = ".2rem solid #000";
       card.style.boxShadow = "0 .5rem 2px -2px #000";
       gameOver = true;
@@ -137,14 +144,15 @@ function index() {
           <span></span>
           <span></span>
         </div>
-        <p className='start' onClick={setGame}>start</p>
+        <a href="#" onClick={() => { setGame(); setVisible(!visible);}}>{visible ? '' : 'Start'}</a>
+        {/* <p id='start' onClick={() => setVisible(!visible)}>{visible ? 'Hide' : 'Show'}start</p> */}
     </div>
     <div className='PlayerMain'>
-      <div className='PlayerMainCard1 PlayerMainCard'>
+      <div style={{display: visible ? 'block' : 'none'}} className='PlayerMainCard1 PlayerMainCard'>
           <p>player 1</p>
           <h1><BsFillEmojiSmileFill /></h1>
       </div>
-      <div className='PlayerMainBoard'>
+      <div style={{display: visible ? 'block' : 'none'}} className='PlayerMainBoard'>
         <div id="board">
           <div id="card">
             {/* <p id="card-head">Player 1</p>
@@ -152,7 +160,7 @@ function index() {
           </div>
         </div>
       </div>
-      <div className='PlayerMainCard2 PlayerMainCard'>
+      <div style={{display: visible ? 'block' : 'none'}} className='PlayerMainCard2 PlayerMainCard'>
           <p>player 2</p>
           <h1><BsFillEmojiSmileFill /></h1>
       </div>
@@ -162,4 +170,4 @@ function index() {
   )
 }
 
-export default index
+export default Player
