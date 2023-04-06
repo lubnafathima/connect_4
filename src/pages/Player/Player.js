@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { BsFillEmojiSmileFill } from 'react-icons/bs';
+import { BsFillEmojiSmileFill, BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 
 function Player() {
 
@@ -123,14 +123,14 @@ function Player() {
     //   let cardBody = document.getElementById("card-body");
       if (board[r][c] === playerRed) {
           card.innerHTML = `Player 1 <br> Wins`
-          card.style.background = "#FE6687";
+        //   card.style.background = "#FE6687";
         } else {
           card.innerHTML = "Player 2 Wins"
-          card.style.background = "#FFCE6B";
+        //   card.style.background = "#FFCE6B";
       }
     //   cardBody.innerText = "Wins";             
-      card.style.border = ".2rem solid #000";
-      card.style.boxShadow = "0 .5rem 2px -2px #000";
+    //   card.style.border = ".2rem solid #000";
+    //   card.style.boxShadow = "0 .5rem 2px -2px #000";
       gameOver = true;
   }
 
@@ -149,6 +149,7 @@ function Player() {
         {/* <p id='start' onClick={() => setVisible(!visible)}>{visible ? 'Hide' : 'Show'}start</p> */}
     </div>
     <div className='PlayerMain'>
+        <p style={{display: visible ? 'none' : 'block'}}  className='ClickStart'>Click Start <span><BsFillArrowUpRightSquareFill /></span></p>
       <div style={{display: visible ? 'block' : 'none'}} className='PlayerMainCard1 PlayerMainCard'>
           <p>player 1</p>
           <h1><BsFillEmojiSmileFill /></h1>

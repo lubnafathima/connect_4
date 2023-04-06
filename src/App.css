@@ -259,6 +259,22 @@ ol li:before {
   height: 70vh;
 }
 
+.ClickStart {
+  font-size: 3em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: -3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ClickStart span {
+  color: #FE6687;
+}
+
 /* ************* PLAYER MAIN CARD 1 *************** */
 
 .PlayerMainCard {
@@ -359,7 +375,7 @@ ol li:before {
 }
 
 #card {
-  /* background: url('./arrow.png') no-repeat; */
+  background: url('./arrow.png') no-repeat;
   color: #fff;
   width: 30%;
   height: 25%;
@@ -376,18 +392,18 @@ ol li:before {
 
 
 
-  font-size: 1em;
+  /* font-size: 1em;
   font-weight: 900;
-  border-radius: 10%;
+  border-radius: 10%; */
 }
 
-/* #card p {
+#card p {
   font-size: 1em;
 }
 
 #card h1 {
   font-size: 2em;
-} */
+}
 
 @media only screen and (max-width: 1000px) {
   .tile {
